@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.dialect">
+			org.hibernate.dialect.SQLServerDialect
+		</property>
+		<property name="hibernate.connection.driver_class">
+			com.microsoft.sqlserver.jdbc.SQLServerDriver
+		</property>
+
+		<property name="hibernate.connection.url">
+			jdbc:sqlserver://localhost:1433;database=football;
+		</property>
+		<property name="hibernate.connection.username">
+			pw
+		</property>
+		<property name="hibernate.connection.password">
+			password
+		</property>
+		
+		<property name="hibernate.default_schema">dbo</property>
+		
+		<property name="hibernate.hbm2ddl.auto">update</property>
+
+		<mapping class="org.project.model.Match" />
+
+	</session-factory>
+</hibernate-configuration>
