@@ -1,6 +1,5 @@
 @CHARSET "UTF-8";
 
-<<<<<<< HEAD
 * {
 	margin: 0px;
 	padding: 0px;
@@ -42,8 +41,4 @@ body {
 
 #menu ul ul {
 	display: none;
-=======
-body {
-	background-color: green;
->>>>>>> branch 'master' of https://signaturerecognition.visualstudio.com/_git/Football
 }

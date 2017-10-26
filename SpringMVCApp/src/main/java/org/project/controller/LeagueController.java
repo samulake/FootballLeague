@@ -1,14 +1,14 @@
 package org.project.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class HomeController {
+public class LeagueController {
 	
-	@GetMapping(path="/home")
-	public String setHomeUrl() {
-		return "home";
+	@GetMapping(path="/leagues")
+	public String showLeagues() {
+		return "leagues";
 	}
-
 }
