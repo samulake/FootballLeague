@@ -3,7 +3,6 @@
 <hibernate-configuration>
 	<session-factory>
 		<property name="hibernate.dialect">
-<<<<<<< HEAD
 			org.hibernate.dialect.SQLServerDialect
 		</property>
 		<property name="hibernate.connection.driver_class">
@@ -21,23 +20,6 @@
 		</property>
 		
 		<property name="hibernate.default_schema">dbo</property>
-=======
-			org.hibernate.dialect.PostgreSQLDialect
-		</property>
-		<property name="hibernate.connection.driver_class">
-			org.postgresql.Driver
-		</property>
-
-		<property name="hibernate.connection.url">
-			jdbc:postgresql://localhost:5432/project
-		</property>
-		<property name="hibernate.connection.username">
-			postgres
-		</property>
-		<property name="hibernate.connection.password">
-			postgres
-		</property>
->>>>>>> branch 'master' of https://signaturerecognition.visualstudio.com/_git/Football
 		
 		<property name="hibernate.hbm2ddl.auto">update</property>
 

@@ -1,9 +1,9 @@
-<<<<<<< HEAD
+<%@tag import="java.security.Principal"%>
 <%@ tag language="java" pageEncoding="UTF-8"%>
 
 <div id="menu">
 	<ul>
-		<li><a>Ligi</a></li>
+		<li><a href="${pageContext.request.contextPath}/football/leagues">Ligi</a></li>
 		<li>Drużyny
 			<ul>
 				<li><a>Składy</a></li>
@@ -20,10 +20,3 @@
 		<li><a>Wyloguj</a></li>
 	</ul>
 </div>
-=======
-<a href="">Matches</a>
-<a href="">Teams</a>
-<a href="">Tournaments</a>
-<a href="">Players</a>
-
->>>>>>> branch 'master' of https://signaturerecognition.visualstudio.com/_git/Football

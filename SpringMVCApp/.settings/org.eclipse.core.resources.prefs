@@ -1,6 +1,2 @@
 eclipse.preferences.version=1
-<<<<<<< HEAD
 encoding//src/main/webapp/WEB-INF/tags/menu.tag=UTF-8
-=======
-encoding//src/main/webapp/WEB-INF/properties/messages_pl.properties=UTF-8
->>>>>>> branch 'master' of https://signaturerecognition.visualstudio.com/_git/Football

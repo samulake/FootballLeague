@@ -8,6 +8,6 @@
 </head>
 <body>
 	Welcome!
-	<a href="${pageContext.request.contextPath}/user/home">Login</a>
+	<a href="${pageContext.request.contextPath}/football/home">Login</a>
 </body>
 </html>

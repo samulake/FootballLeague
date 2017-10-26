@@ -17,9 +17,9 @@
        http://www.springframework.org/schema/security 
        http://www.springframework.org/schema/security/spring-security-4.2.xsd">
        
-	<!-- <http pattern="/login*" security="none" /> -->
+	<http pattern="/login*" security="none" />
 	<http auto-config="true" use-expressions="true">
-		<intercept-url pattern="/user/*" access="hasRole('ROLE_USER')" />
+		<intercept-url pattern="/football*" access="hasRole('ROLE_USER')" />
 		<form-login />
 		<csrf disabled="true"/>
 	</http>
