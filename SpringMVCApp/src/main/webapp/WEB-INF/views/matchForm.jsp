@@ -24,12 +24,21 @@
 		<table>
 			<tr>
 				<td><spring:message code="label.homeTeam" /></td>
+<<<<<<< HEAD
 				<td><input id="homeTeamInput" type="text" name="homeTeam" onfocus="changeFieldBackground(this)" onblur="restoreDefaults(this)"/></td>
 			</tr>
 
 			<tr>
 				<td><spring:message code="label.visitorTeam" /></td>
 				<td><input id="visitorTeamInput" type="text" name="visitorTeam" /></td>
+=======
+				<td><input id="homeTeamInput" type="text" name="homeTeam.name" onfocus="changeFieldBackground(this)" onblur="restoreDefaults(this)"/></td>
+			</tr>
+
+			<tr>
+				<td><spring:message code="label.visitorTeam" /></td>
+				<td><input id="visitorTeamInput" type="text" name="visitorTeam.name" /></td>
+>>>>>>> branch 'master' of https://signaturerecognition.visualstudio.com/_git/Football
 			</tr>
 			<tr>
 				<td><spring:message code="label.result" /></td>

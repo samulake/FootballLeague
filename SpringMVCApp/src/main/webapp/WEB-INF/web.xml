@@ -2,6 +2,7 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
 		 http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	version="3.1">
+<<<<<<< HEAD
 	
 	<welcome-file-list>
 		<welcome-file>welcome.jsp</welcome-file>
@@ -43,5 +44,20 @@
   	<filter-name>springSecurityFilterChain</filter-name>
   	<url-pattern>/*</url-pattern>
   </filter-mapping>
+=======
+
+	<display-name>Archetype Created Web Application</display-name>
+
+	<servlet>
+		<servlet-name>dispatcher</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/main/*</url-pattern>
+	</servlet-mapping>
+>>>>>>> branch 'master' of https://signaturerecognition.visualstudio.com/_git/Football
 	
 </web-app>

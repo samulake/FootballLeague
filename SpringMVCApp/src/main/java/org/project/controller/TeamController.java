@@ -47,8 +47,29 @@ public class TeamController implements Service {
 	@RequestMapping(value="/new", method=RequestMethod.POST)
 	public ModelAndView createTeam(@Valid @ModelAttribute("team") Team team, BindingResult result) {
 		ModelAndView modelAndView = new ModelAndView("team");
+<<<<<<< HEAD
 
 		return modelAndView;
+=======
+		if(result.hasErrors()) {
+			modelAndView.setViewName("teamForm");
+			//modelAndView.addObject("team", team);
+			return modelAndView;
+		}
+		List<Team> teams = storage();
+		teams.add(team);
+			
+		return modelAndView;
+	}
+
+	public List<Team> storage() {
+		List<Team> teams = new ArrayList<>();
+		teams.add(new Team("Team 1", null, new Date()));
+		teams.add(new Team("Team 2", null, new Date()));
+		teams.add(new Team("Team 3", null, new Date()));
+
+		return teams;
+>>>>>>> branch 'master' of https://signaturerecognition.visualstudio.com/_git/Football
 	}
 
 }

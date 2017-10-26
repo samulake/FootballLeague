@@ -1,5 +1,6 @@
 package org.project.model;
 
+<<<<<<< HEAD
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -27,6 +28,19 @@ public class Country {
 
 	public void setContinentId(int continentId) {
 		this.continentId = continentId;
+=======
+public class Country {
+	String abbreviation;
+	String name;
+
+	public Country() {
+	}
+
+	public Country(String abbreviation, String name) {
+		super();
+		this.abbreviation = abbreviation;
+		this.name = name;
+>>>>>>> branch 'master' of https://signaturerecognition.visualstudio.com/_git/Football
 	}
 
 	public String getAbbreviation() {

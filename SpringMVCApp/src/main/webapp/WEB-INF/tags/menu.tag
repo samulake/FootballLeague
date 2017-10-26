@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%@ tag language="java" pageEncoding="UTF-8"%>
 
 <div id="menu">
@@ -19,3 +20,10 @@
 		<li><a>Wyloguj</a></li>
 	</ul>
 </div>
+=======
+<a href="">Matches</a>
+<a href="">Teams</a>
+<a href="">Tournaments</a>
+<a href="">Players</a>
+
+>>>>>>> branch 'master' of https://signaturerecognition.visualstudio.com/_git/Football
