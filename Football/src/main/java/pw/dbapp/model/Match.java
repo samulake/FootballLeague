@@ -5,6 +5,7 @@ import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -20,12 +21,13 @@ public class Match {
 	@OneToOne
 	private League league;
 
-	public Match(){
-
-	}
-
-	public void finalize() throws Throwable {
-
-	}
+	@ManyToOne
+	private Team homeTeam;
+	
+	@ManyToOne
+	private Team visitorTeam;
+	
+	@ManyToOne
+	private Stadium stadiumId;
 
 }
