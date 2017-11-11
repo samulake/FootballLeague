@@ -26,6 +26,7 @@ public class Team {
 	@OneToOne
 	private Stadium stadium;
 	@ManyToOne
+	@JoinColumn(name="league_iD")
 	private League league;
 
 }
