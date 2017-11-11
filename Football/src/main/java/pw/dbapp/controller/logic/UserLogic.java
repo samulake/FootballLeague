@@ -7,6 +7,7 @@ import pw.dbapp.model.Person;
 import pw.dbapp.model.Team;
 
 public interface UserLogic {
+		
 	List<League> getAllLeagues();
 	
 	List<Team> searchTeams(String prefixName);
