@@ -18,7 +18,7 @@ public class Person {
 	private String name;
 	private String Surname;
 	@ManyToOne
-	@JoinColumn(name="abbreviation")
+	@JoinColumn(name="country_id")
 	public Country country;
 	@ManyToOne
 	private Job job;

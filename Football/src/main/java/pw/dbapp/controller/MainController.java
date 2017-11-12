@@ -11,4 +11,9 @@ public class MainController {
 		return "home";
 	}
 	
+	@GetMapping("/leagues")
+	public String showLeagues() {
+		return "leagues";
+	}
+	
 }
