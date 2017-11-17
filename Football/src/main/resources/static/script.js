@@ -13,3 +13,20 @@ function loadLeagueList(uri) {
 
      });
 }
+
+function loadPersonsList(uri) {
+	 $.get(serverPrefix + uri, function(data) {
+
+        $.each(data, function(i, person) {
+
+            $("#personsTable").append(
+                "<tr><td>" + person.id + "</td>" +
+                "<td>" + person.name + "</td>" +
+                "<td>" + person.surname + "</td>" +
+                "<td>" + person.country.abbreviation + "</td>" +
+                "<td>" + person.job.name + "</td></tr>"
+            );
+        });
+
+    });
+}

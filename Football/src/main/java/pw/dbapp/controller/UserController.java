@@ -12,12 +12,15 @@ import pw.dbapp.model.League;
 import pw.dbapp.model.Person;
 import pw.dbapp.model.Team;
 import pw.dbapp.service.logic.LeagueLogic;
+import pw.dbapp.service.logic.PersonLogic;
 
 @RestController
 @RequestMapping("/user")
 public class UserController implements UserLogic {
 	@Autowired
 	private LeagueLogic leagueService;
+	@Autowired
+	private PersonLogic personService;
 	
 	@Override
 	@GetMapping(path="/leagues")
@@ -25,6 +28,12 @@ public class UserController implements UserLogic {
 		return leagueService.getLeagues();
 	}
 
+	@Override
+	@GetMapping(path="/persons")
+	public List<Person> getAllPersons() {
+		return personService.getPersons();
+	}
+	
 	@Override
 	public List<Team> searchTeams(String prefixName) {
 		return null;
