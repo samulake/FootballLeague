@@ -22,6 +22,10 @@ public class Person {
 	public Country country;
 	@ManyToOne
 	private Job job;
+	
+	@ManyToOne
+	@JoinColumn(name="team_id")
+	private Team team;
 
 	public Person(){
 

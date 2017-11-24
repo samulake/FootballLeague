@@ -1,0 +1,16 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+	
+<hibernate-configuration>
+	<session-factory>
+		<mapping class="pw.dbapp.model.Team"/>
+		<mapping class="pw.dbapp.model.League"/>
+		<mapping class="pw.dbapp.model.Person"/>
+		<mapping class="pw.dbapp.model.Stadium"/>
+		<mapping class="pw.dbapp.model.Match"/>
+		<mapping class="pw.dbapp.model.Job"/>
+		<mapping class="pw.dbapp.model.Country"/>
+	</session-factory>
+</hibernate-configuration>
+
