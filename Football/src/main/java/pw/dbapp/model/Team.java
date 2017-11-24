@@ -7,26 +7,27 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
+import lombok.ToString;
 
-@Entity
+@Entity(name="teams")
 @Table(name="teams")
 @Data
+@ToString(exclude={"stadium", "league"})
 public class Team {
 	@Id @GeneratedValue
 	private Long id;
 	private String name;
-	@OneToMany
-	@JoinColumn(name="person_id")
-	private List<Person> squad;
 	@OneToOne
+	@JoinColumn(name="stadium_id")
 	private Stadium stadium;
 	@ManyToOne
-	@JoinColumn(name="league_iD")
+	@JoinColumn(name="league_id")
 	private League league;
 
 }

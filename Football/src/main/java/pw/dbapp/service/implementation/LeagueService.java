@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import pw.dbapp.model.League;
+import pw.dbapp.model.Team;
 import pw.dbapp.repository.LeagueRepository;
 import pw.dbapp.service.logic.LeagueLogic;
 
@@ -21,7 +22,7 @@ public class LeagueService implements LeagueLogic {
 	}
 
 	@Override
-	public League getLeague(Long leagueId) {
+	public List<Team> getLeague(Long leagueId) {
 		return null;
 	}
 }
