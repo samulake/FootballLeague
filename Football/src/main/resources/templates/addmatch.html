@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+<script type="text/javascript"
+	src="webjars/jquery/3.2.1/dist/jquery.min.js">
+
+</script>
+<script type="text/javascript" th:src="@{/script.js}"></script>
+</head>
+<body onload="">
+	<p>Dodaj mecz</p>
+	<form action="#" th:action="@{/seedstartermng}"  method="post">
+    	<input type="text" />:
+    	<input type="text" />
+    	<p></p>
+    	<input type="text" />:
+    	<input type="text" />
+    	<p></p>
+    	Data:<input type="text" />
+    	<p></p>
+    	Godzina:<input type="text" />
+    	<p></p>
+    	Stadion:<input type="text" />
+    	<p></p>
+    	Strzelcy<p></p>
+    	<input type="text" />
+    	<p></p>
+    	<button type="button">OK</button>
+	</form>
+</body>
+</html>

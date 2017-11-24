@@ -16,4 +16,8 @@ public interface UserLogic {
 	List<Team> searchTeams(String prefixName);
 	
 	List<Person> getBestPlayers(Long jobId);
+
+	List<Person> getAllPersons(); 
+	
+	List<Person> getBestScorers();
 }

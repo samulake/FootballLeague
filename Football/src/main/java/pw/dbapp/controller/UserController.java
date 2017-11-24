@@ -14,8 +14,10 @@ import pw.dbapp.model.League;
 import pw.dbapp.model.Person;
 import pw.dbapp.model.Team;
 import pw.dbapp.model.TeamResults;
+import pw.dbapp.service.logic.GoalDetailsServiceLogic;
 import pw.dbapp.service.logic.LeagueLogic;
 import pw.dbapp.service.logic.TeamLogic;
+import pw.dbapp.service.logic.PersonLogic;
 
 @RestController
 @RequestMapping("/user")
@@ -25,6 +27,10 @@ public class UserController implements UserLogic {
 	@Autowired
 	private TeamLogic teamService;
 	
+	@Autowired
+	private PersonLogic personService;
+	@Autowired
+	private GoalDetailsServiceLogic goalDetailsService;
 	
 	@Override
 	@GetMapping(path="/leagues", produces=MediaType.APPLICATION_JSON_VALUE)
@@ -32,6 +38,19 @@ public class UserController implements UserLogic {
 		return leagueService.getLeagues();
 	}
 
+	@Override
+	@GetMapping(path="/persons")
+	public List<Person> getAllPersons() {
+		return personService.getPersons();
+	}
+	
+	@Override
+	@GetMapping(path="/bestScorers")
+	public List<Person> getBestScorers() {
+		return goalDetailsService.getBestScorers();
+	}
+	
+	
 	@Override
 	public List<Team> searchTeams(String prefixName) {
 		return null;

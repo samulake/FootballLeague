@@ -7,10 +7,14 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name="jobs")
 @Data
+@Getter
+@Setter
 public class Job {
 	@Id @GeneratedValue
 	private Long id;

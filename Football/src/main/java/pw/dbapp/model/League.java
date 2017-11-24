@@ -22,7 +22,7 @@ import lombok.ToString;
 @Data
 @ToString(exclude={"teams"})
 public class League {
-	@Id @GeneratedValue
+	@Id @GeneratedValue 
 	private Long id;
 	private String name;
 	
@@ -32,6 +32,9 @@ public class League {
 	
 	@OneToOne(mappedBy="parentLeague")
 	private League childLeague;*/
+	
+	@OneToMany(mappedBy="league")
+	private List<Team> teams;
 	
 	@Column(name="max_teams_number")
 	private int maxTeamsNumber;

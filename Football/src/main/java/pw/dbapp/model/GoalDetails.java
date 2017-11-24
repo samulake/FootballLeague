@@ -1,5 +1,6 @@
 package pw.dbapp.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -8,7 +9,7 @@ import javax.persistence.Table;
 
 import lombok.Data;
 
-@Entity
+@Entity(name="goals_details")
 @Table(name="goals_details")
 @Data
 public class GoalDetails {
@@ -23,6 +24,12 @@ public class GoalDetails {
 	@ManyToOne
 	private Person goalkeeper;
 
+	@ManyToOne
+	private Team forTeam;
+	@ManyToOne
+	private Team againstTeam;
+	
+	
 	public GoalDetails(){
 
 	}

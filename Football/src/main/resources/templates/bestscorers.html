@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+<script type="text/javascript"
+	src="webjars/jquery/3.2.1/dist/jquery.min.js">
+
+</script>
+<script type="text/javascript" th:src="@{/script.js}"></script>
+</head>
+<body onload="loadBestScorersList('/user/bestScorers')">  
+	<p>Najlepsi strzelscy</p>
+	<table id="bestScorersTable">
+		<tr>
+			<th>#</th>
+			<th>Zawodnik</th>
+			<th>Liczba bramek</th>
+			<th>Liczba asyst</th>
+			<th>Liczba bramek z karnych</th>
+		</tr>
+	</table>
+
+</body>
+</html>
