@@ -12,6 +12,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.Data;
 import lombok.ToString;
 
@@ -19,6 +21,7 @@ import lombok.ToString;
 @Table(name="teams")
 @Data
 @ToString(exclude={"stadium", "league"})
+@JsonIgnoreProperties(value={"stadium", "league"})
 public class Team {
 	@Id @GeneratedValue
 	private Long id;

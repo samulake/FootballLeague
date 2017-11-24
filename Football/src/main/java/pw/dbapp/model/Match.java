@@ -28,6 +28,6 @@ public class Match {
 	private Team visitorTeam;
 	
 	@ManyToOne
-	private Stadium stadiumId;
+	private Stadium stadium;
 
 }
