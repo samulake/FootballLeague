@@ -15,4 +15,6 @@ public interface UserLogic {
 	List<Person> getBestPlayers(Long jobId);
 
 	List<Person> getAllPersons(); 
+	
+	List<Person> getBestScorers();
 }

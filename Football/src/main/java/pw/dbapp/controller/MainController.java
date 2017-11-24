@@ -20,4 +20,34 @@ public class MainController {
 	public String showPersons() {
 		return "persons";
 	}
+	
+	@GetMapping("/bestScorers")
+	public String showBestScorers() {
+		return "bestscorers";
+	}
+	
+	@GetMapping("/bestAssistants")
+	public String showBestAssistants() {
+		return "bestassistants";
+	}
+	
+	@GetMapping("/bestGoalkeepers")
+	public String showBestGoalkeepers() {
+		return "bestgoalkeepers";
+	}
+	
+	@GetMapping("/addMatch")
+	public String showAddMatch() {
+		return "addmatch";
+	}
+	
+	@GetMapping("/makeTransfer")
+	public String showMakeTransfer() {
+		return "maketransfer";
+	}
+	
+	@GetMapping("/league")
+	public String showLeague() {
+		return "league";
+	}
 }

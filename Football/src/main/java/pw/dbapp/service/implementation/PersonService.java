@@ -18,8 +18,8 @@ public class PersonService implements PersonLogic {
 	@Override
 	public List<Person> getPersons() {
 		List<Person> persons = personRepository.findAll();
-		System.out.println(persons);
 		return persons;
 	}
+
 
 }

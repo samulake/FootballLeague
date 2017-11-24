@@ -5,12 +5,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import pw.dbapp.controller.logic.UserLogic;
 import pw.dbapp.model.League;
 import pw.dbapp.model.Person;
 import pw.dbapp.model.Team;
+import pw.dbapp.service.logic.GoalDetailsServiceLogic;
 import pw.dbapp.service.logic.LeagueLogic;
 import pw.dbapp.service.logic.PersonLogic;
 
@@ -21,6 +23,8 @@ public class UserController implements UserLogic {
 	private LeagueLogic leagueService;
 	@Autowired
 	private PersonLogic personService;
+	@Autowired
+	private GoalDetailsServiceLogic goalDetailsService;
 	
 	@Override
 	@GetMapping(path="/leagues")
@@ -33,6 +37,13 @@ public class UserController implements UserLogic {
 	public List<Person> getAllPersons() {
 		return personService.getPersons();
 	}
+	
+	@Override
+	@GetMapping(path="/bestScorers")
+	public List<Person> getBestScorers() {
+		return goalDetailsService.getBestScorers();
+	}
+	
 	
 	@Override
 	public List<Team> searchTeams(String prefixName) {

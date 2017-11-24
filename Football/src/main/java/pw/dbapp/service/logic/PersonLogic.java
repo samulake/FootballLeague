@@ -7,4 +7,5 @@ import pw.dbapp.model.Person;
 public interface PersonLogic {
 	
 	List<Person> getPersons();
+
 }

@@ -14,13 +14,14 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.Data;
 import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name="leagues")
 @Data
 @JsonIgnoreProperties("teams")
 public class League {
-	@Id @GeneratedValue
+	@Id @GeneratedValue 
 	private Long id;
 	private String name;
 	
@@ -35,4 +36,5 @@ public class League {
 
 	}
 
+	
 }
