@@ -9,11 +9,11 @@
 </script>
 <script type="text/javascript" th:src="@{/script.js}"></script>
 </head>
-<body onload="">  
+<body onload="loadLeagueTable('/api/leagues/1')">  
 	<p>Ekstraklasa 1</p>
-	<table id="bestScorersTable">
+	<table id="leagueTable">
 		<tr>
-			<th>#</th>
+			<th>Miejsce</th>
 			<th>Drużyna</th>
 			<th>Liczba puktów</th>
 			<th>W</th>

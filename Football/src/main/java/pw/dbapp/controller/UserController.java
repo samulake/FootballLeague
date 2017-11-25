@@ -20,13 +20,12 @@ import pw.dbapp.service.logic.TeamLogic;
 import pw.dbapp.service.logic.PersonLogic;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/api")
 public class UserController implements UserLogic {
 	@Autowired
 	private LeagueLogic leagueService;
 	@Autowired
 	private TeamLogic teamService;
-	
 	@Autowired
 	private PersonLogic personService;
 	@Autowired
@@ -63,7 +62,7 @@ public class UserController implements UserLogic {
 	}
 
 	@Override
-	@GetMapping(path="/leagues/{leagueId}/table")
+	@GetMapping(path="/leagues/{leagueId}", produces=MediaType.APPLICATION_JSON_VALUE)
 	public List<TeamResults> getLeagueTable(@PathVariable Long leagueId) {
 		return teamService.getLeagueTable(leagueId);
 	}
