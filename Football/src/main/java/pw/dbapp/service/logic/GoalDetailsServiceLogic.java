@@ -6,5 +6,7 @@ import pw.dbapp.model.Person;
 
 public interface GoalDetailsServiceLogic {
 	
-	List<Person> getBestScorers();
+	String getBestScorers();
+
+	String getBestAssistants();
 }

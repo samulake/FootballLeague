@@ -46,10 +46,15 @@ public class UserController implements UserLogic {
 	
 	@Override
 	@GetMapping(path="/bestScorers")
-	public List<Person> getBestScorers() {
+	public String getBestScorers() {
 		return goalDetailsService.getBestScorers();
 	}
 	
+	@Override
+	@GetMapping(path="/bestAssistants")
+	public String getBestAssistants() {
+		return goalDetailsService.getBestAssistants();
+	}
 	
 	@Override
 	public List<Team> searchTeams(String prefixName) {
