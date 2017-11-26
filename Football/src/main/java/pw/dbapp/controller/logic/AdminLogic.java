@@ -7,4 +7,6 @@ public interface AdminLogic {
 	Match addMatch(Match match);
 	
 	Person updatePerson(Person person);
+	
+	void makeTransfer(Long personId, Long teamId);
 }

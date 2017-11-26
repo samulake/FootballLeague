@@ -26,7 +26,6 @@ public class UserController implements UserLogic {
 	private LeagueLogic leagueService;
 	@Autowired
 	private TeamLogic teamService;
-	
 	@Autowired
 	private PersonLogic personService;
 	@Autowired

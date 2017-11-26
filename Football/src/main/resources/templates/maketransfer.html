@@ -11,13 +11,32 @@
 </head>
 <body onload="">
 	<p>Zrób transfer</p>
-	<form action="#" th:action="@{/seedstartermng}"  method="post">
-    	<input type="text" />-->
-    	<input type="text" />
-    	<p></p>
-    	Zawodnik<input type="text" />
-    	<p></p>
-    	<button type="button">OK</button>
-	</form>
+	<div class="makeTransferForm">
+         Zawodnik:        
+           <input  id="person" ></input> 			>> transferuj do >>      
+           <input  id="team2" ></input>
+           <br></br>
+        <button type="button" onclick="makeTransfer();">Zrób transfer</button>
+	</div>
+	
+	
+
+	
+	<script>
+    var makeTransfer = function () {
+        var team2 = document.getElementById('team2').value;
+        var person = document.getElementById('person').value;
+        $.ajax({
+            type: 'PUT',
+            url: 'http://localhost:8080/admin/makeTransfer/' + person + '/' + team2,
+            dataType: 'json',
+            contentType: 'application/json',
+            data: JSON.stringify({
+                person: person,
+                team2: team2,
+            })
+        });
+    };
+</script>
 </body>
 </html>
