@@ -7,7 +7,8 @@ import pw.dbapp.model.Match;
 import pw.dbapp.model.Person;
 
 public interface AdminLogic {
-	Match addMatchDetails(Match match);
 	
 	Person updatePerson(Person person);
+
+	Match addMatchDetails(Long matchId, Match match);
 }

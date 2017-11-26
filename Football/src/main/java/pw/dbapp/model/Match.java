@@ -41,5 +41,7 @@ public class Match {
 	
 	@OneToMany(mappedBy="match")
 	private List<GoalDetails> goals;
+	
+	private String result;
 
 }
