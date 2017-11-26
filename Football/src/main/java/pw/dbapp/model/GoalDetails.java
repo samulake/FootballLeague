@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 import lombok.Data;
 
-@Entity(name="goals_details")
+@Entity
 @Table(name="goals_details")
 @Data
 public class GoalDetails {
@@ -23,12 +23,10 @@ public class GoalDetails {
 	private Person assistant;
 	@ManyToOne
 	private Person goalkeeper;
-
 	@ManyToOne
 	private Team forTeam;
 	@ManyToOne
 	private Team againstTeam;
-	
 	
 	public GoalDetails(){
 
@@ -37,5 +35,4 @@ public class GoalDetails {
 	public void finalize() throws Throwable {
 
 	}
-
 }

@@ -11,6 +11,7 @@
 		<mapping class="pw.dbapp.model.Match"/>
 		<mapping class="pw.dbapp.model.Job"/>
 		<mapping class="pw.dbapp.model.Country"/>
+		<mapping class="pw.dbapp.model.GoalDetails"/>
 	</session-factory>
 </hibernate-configuration>
 
