@@ -57,14 +57,28 @@ function loadPersonsList(uri) {
 
 function loadBestScorersList(uri) {
 	 $.get(serverPrefix + uri, function(data) {
-        $.each(data, function(i, person) {
+		var s = JSON.parse(data);
+        $.each(s, function(i, scorer) {
             $("#bestScorersTable").append(
-                "<tr><td>" + person.id + "</td>" +
-                "<td>" + person.name + "</td>" +
-                "<td>" + person.surname + "</td>" +
-                "<td>" + person.country.abbreviation + "</td>" +
-                "<td>" + person.job.name + "</td></tr>"
+                "<tr><td>" + scorer.place + "</td>" +
+                "<td>" + scorer.name + " " + scorer.surname + "</td>" +
+                "<td>" + scorer.goalsScored + "</td>" +
+                "<td>" + scorer.assistsMade + "</td>" +
+                "<td>" + "0" + "</td></tr>"
             );
         });
     });
+}
+
+function loadBestAssistantsList(uri) {
+	 $.get(serverPrefix + uri, function(data) {
+		var s = JSON.parse(data);
+       $.each(s, function(i, assistant) {
+           $("#bestScorersTable").append(
+               "<tr><td>" + assistant.place + "</td>" +
+               "<td>" + assistant.name + " " + assistant.surname + "</td>" +
+               "<td>" + assistant.assistsMade + "</td></tr>"
+           );
+       });
+   });
 }

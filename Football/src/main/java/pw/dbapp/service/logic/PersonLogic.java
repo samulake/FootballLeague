@@ -8,4 +8,5 @@ public interface PersonLogic {
 	
 	List<Person> getPersons();
 
+	void tranferPerson(Long personId, Long teamId);
 }

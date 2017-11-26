@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8" />
+<meta charset="utf-8"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <title>Insert title here</title>
 <script type="text/javascript"
 	src="webjars/jquery/3.2.1/dist/jquery.min.js">
@@ -10,14 +15,61 @@
 <script type="text/javascript" th:src="@{/script.js}"></script>
 </head>
 <body onload="">
-	<p>Zrób transfer</p>
-	<form action="#" th:action="@{/seedstartermng}"  method="post">
-    	<input type="text" />-->
-    	<input type="text" />
-    	<p></p>
-    	Zawodnik<input type="text" />
-    	<p></p>
-    	<button type="button">OK</button>
-	</form>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/home">MAB</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li ><a href="/home">Strona główna</a></li>
+      <li><a href="/leagues">Ligi</a></li>
+      <li><a href="/bestScorers">Najlepsi strzelcy</a></li>
+      <li><a href="/bestAssistants">Najlepsi asystenci</a></li>
+      <li><a href="/bestGoalkeepers">Najlepsi bramkarze</a></li>
+      <li ><a href="/addMatch">Dodaj mecz</a></li>
+      <li class="active"><a href="/makeTransfer">Zrób transfer</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+
+<div class="container-fluid">
+	<div class="jumbotron">
+	<h3>Zrób transfer</h3>
+	<form>
+		<div class="row">
+    		<div class="col-sm-4"><input type="text" class="form-control input-lg" style="text-align:right" id="person" placeholder="Zawodnik"></input></div>
+    		<div class="col-sm-1"><p align="center"><font size="6">&gt;&gt;</font></p></div>
+ 			<div class="col-sm-4"><input type="text" class="form-control input-lg" id="team" placeholder="Drużyna"></input></div>
+    	</div>  	
+    	<div class="row">
+    		<div class="col-sm-4">
+    		    <br />
+    			<br />
+    			<button type="button" class="btn btn-primary" onclick="makeTransfer();">Zrób transfer</button>
+    		</div>
+    	</div>
+	</form> 
+	</div>
+</div>
+
+	<script>
+    var makeTransfer = function () {
+        var team2 = document.getElementById('team').value;
+        var person = document.getElementById('person').value;
+        $.ajax({
+            type: 'PUT',
+            url: 'http://localhost:8080/admin/makeTransfer/' + person + '/' + team2,
+            dataType: 'json',
+            contentType: 'application/json',
+            data: JSON.stringify({
+                person: person,
+                team2: team2,
+            })
+        });
+    };
+</script>
 </body>
 </html>

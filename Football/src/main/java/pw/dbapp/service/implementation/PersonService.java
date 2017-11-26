@@ -21,5 +21,11 @@ public class PersonService implements PersonLogic {
 		return persons;
 	}
 
+	@Override
+	public void tranferPerson(Long personId, Long teamId) {
+		personRepository.changeTeamOfPerson(personId, teamId);
+	}
+
+	
 
 }

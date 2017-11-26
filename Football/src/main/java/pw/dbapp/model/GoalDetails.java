@@ -4,8 +4,11 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.google.gson.annotations.Expose;
 
 import lombok.Data;
 
@@ -13,13 +16,17 @@ import lombok.Data;
 @Table(name="goals_details")
 @Data
 public class GoalDetails {
-	@Id @GeneratedValue
+	@Id 
+	@GeneratedValue 
+	@Expose
 	private Long id;
 	@ManyToOne
 	private Match match;
 	@ManyToOne
+	@Expose
 	private Person scorer;
 	@ManyToOne
+	@Expose
 	private Person assistant;
 	@ManyToOne
 	private Person goalkeeper;

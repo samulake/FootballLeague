@@ -14,13 +14,15 @@ import pw.dbapp.controller.logic.AdminLogic;
 import pw.dbapp.model.Match;
 import pw.dbapp.model.Person;
 import pw.dbapp.service.logic.MatchServiceLogic;
+import pw.dbapp.service.logic.PersonLogic;
 
 @RestController
 @RequestMapping("/admin")
 public class AdminController implements AdminLogic {
 	@Autowired
 	MatchServiceLogic matchService;
-	
+	@Autowired
+	private PersonLogic personService;
 	@Override
 	public Person updatePerson(Person person) {
 		// TODO Auto-generated method stub
@@ -32,6 +34,12 @@ public class AdminController implements AdminLogic {
 	public Match addMatchDetails(@PathVariable Long matchId, @RequestBody Match match) {
 		System.out.println(match.getResult());
 		return matchService.addMatch(match);
+	}
+	
+	@Override
+	@PutMapping("/makeTransfer/{personId}/{teamId}")
+	public void makeTransfer(@PathVariable Long personId, @PathVariable Long teamId) {
+		personService.tranferPerson(personId, teamId);
 	}
 
 }

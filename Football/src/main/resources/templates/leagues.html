@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8" />
+<meta charset="utf-8"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <title>Insert title here</title>
 <script type="text/javascript"
 	src="webjars/jquery/3.2.1/dist/jquery.min.js">
@@ -9,13 +14,34 @@
 </script>
 <script type="text/javascript" th:src="@{/script.js}"></script>
 </head>
-<body onload="loadLeagueList('/api/leagues')">
-	<p>Ligi</p>
-	<table id="leaguesTable">
+<body onload="loadLeagueList('/user/leagues')">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/home">MAB</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li ><a href="/home">Strona główna</a></li>
+      <li class="active"><a href="/leagues">Ligi</a></li>
+      <li><a href="/bestScorers">Najlepsi strzelcy</a></li>
+      <li><a href="/bestAssistants">Najlepsi asystenci</a></li>
+      <li><a href="/bestGoalkeepers">Najlepsi bramkarze</a></li>
+      <li ><a href="/addMatch">Dodaj mecz</a></li>
+      <li><a href="/makeTransfer">Zrób transfer</a></li>
+    </ul>
+  </div>
+</nav>
+
+		<h3>Ligi</h3>
+	<table id="leaguesTable" class="table table-striped">
+		<thead class="thead-light">
 		<tr>
-			<th>L.p</th>
-			<th>Ligi</th>
+			<th>#</th>
+			<th>Liga</th>
 		</tr>
+		</thead>
+		<tbody>
+		</tbody>
 	</table>
 
 </body>

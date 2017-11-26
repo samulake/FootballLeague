@@ -20,7 +20,7 @@ import pw.dbapp.service.logic.TeamLogic;
 import pw.dbapp.service.logic.PersonLogic;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/user")
 public class UserController implements UserLogic {
 	@Autowired
 	private LeagueLogic leagueService;
@@ -45,10 +45,15 @@ public class UserController implements UserLogic {
 	
 	@Override
 	@GetMapping(path="/bestScorers")
-	public List<Person> getBestScorers() {
+	public String getBestScorers() {
 		return goalDetailsService.getBestScorers();
 	}
 	
+	@Override
+	@GetMapping(path="/bestAssistants")
+	public String getBestAssistants() {
+		return goalDetailsService.getBestAssistants();
+	}
 	
 	@Override
 	public List<Team> searchTeams(String prefixName) {

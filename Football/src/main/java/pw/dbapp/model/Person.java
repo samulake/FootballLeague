@@ -10,6 +10,7 @@ import javax.persistence.Table;
 import org.junit.Ignore;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.google.gson.annotations.Expose;
 
 import lombok.Data;
 import lombok.Getter;
@@ -18,9 +19,8 @@ import lombok.Setter;
 @Entity
 @Table(name="people")
 @Data
-@JsonIgnoreProperties(value={"country"})
 public class Person {
-	@Id @GeneratedValue
+	@Id @GeneratedValue @Expose
 	private Long id;
 	private String name;
 	private String surname;

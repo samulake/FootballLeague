@@ -11,4 +11,6 @@ public interface AdminLogic {
 	Person updatePerson(Person person);
 
 	Match addMatchDetails(Long matchId, Match match);
+	
+	void makeTransfer(Long personId, Long teamId);
 }

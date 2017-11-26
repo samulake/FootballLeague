@@ -19,5 +19,7 @@ public interface UserLogic {
 
 	List<Person> getAllPersons(); 
 	
-	List<Person> getBestScorers();
+	String getBestScorers();
+
+	String getBestAssistants();
 }
