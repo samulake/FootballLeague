@@ -1,33 +1,85 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8" />
+ <meta charset="utf-8"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>Insert title here</title>
-<script type="text/javascript"
-	src="webjars/jquery/3.2.1/dist/jquery.min.js">
-
-</script>
 <script type="text/javascript" th:src="@{/script.js}"></script>
 </head>
-<body onload="">
-	<p>Dodaj mecz</p>
-	<form action="#" th:action="@{/seedstartermng}"  method="post">
-    	<input type="text" />:
-    	<input type="text" />
-    	<p></p>
-    	<input type="text" />:
-    	<input type="text" />
-    	<p></p>
-    	Data:<input type="text" />
-    	<p></p>
-    	Godzina:<input type="text" />
-    	<p></p>
-    	Stadion:<input type="text" />
-    	<p></p>
-    	Strzelcy<p></p>
-    	<input type="text" />
-    	<p></p>
-    	<button type="button">OK</button>
-	</form>
+<body>
+ 
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/home">MAB</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li ><a href="/home">Strona główna</a></li>
+      <li><a href="/leagues">Ligi</a></li>
+      <li><a href="/bestScorers">Najlepsi strzelcy</a></li>
+      <li><a href="/bestAssistants">Najlepsi asystenci</a></li>
+      <li><a href="/bestGoalkeepers">Najlepsi bramkarze</a></li>
+      <li class="active"><a href="/addMatch">Dodaj mecz</a></li>
+      <li><a href="/makeTransfer">Zrób transfer</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container-fluid">
+	<div class="jumbotron">
+	<h3>Dodaj mecz</h3>
+	<form method="post">
+		<div class="row">
+    		<div class="col-sm-4"><input type="text" class="form-control input-lg" style="text-align:right" id="team1" placeholder="Gospodarze"></input></div>
+    		<div class="col-sm-1"><input type="text" class="form-control input-lg"  style="text-align:right" id="team1score"></input></div>
+    		<div class="col-sm-1"><p align="center"><font size="6">:</font></p></div>
+    		<div class="col-sm-1"><input type="text" class="form-control input-lg" id="team2score"></input></div>
+    		<div class="col-sm-4"><input type="text" class="form-control input-lg" id="team2" placeholder="Goście"></input></div>
+    	</div>
+    	<div class="row">
+    		<div class="col-sm-4">
+    			<br />
+    			<input type="datetime" class="form-control" id="dateandtime" placeholder="Data i godzina"></input>
+    		</div>
+    	</div>
+    	<div class="row">
+    		<div class="col-sm-4">
+    			<br />
+    			<input type="number" class="form-control" id="stadium" placeholder="Stadion"></input>
+    		</div>
+    	</div>
+    	<div class="row">
+    		<div class="col-sm-4">
+    			<h4><br />Strzelcy:</h4>
+    		</div>
+    	</div>
+    	<div id="scorers">
+    		<div class="row">
+    			<div class="col-sm-4">
+    				<input type="number" class="form-control" id="scorer1" placeholder="Strzelec"></input>
+    			</div>
+    			<div class="col-sm-4">
+    				<button type="button" class="btn">Dodaj asystenta</button>
+    			</div>
+    		</div>
+    	</div>
+    	<div class="row">
+    		<div class="col-sm-4">
+    			<br />
+    			<button type="button" class="btn">Dodaj strzelca</button>
+    		</div>
+    	</div>    	
+    	<div class="row">
+    		<div class="col-sm-4">
+    		    <br />
+    			<br />
+    			<button type="submit" class="btn btn-primary">Dodaj mecz</button>
+    		</div>
+    	</div>
+	</form> 
+	</div>
+</div>
 </body>
 </html>

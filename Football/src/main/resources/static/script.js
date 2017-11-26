@@ -34,7 +34,8 @@ function loadBestScorersList(uri) {
                 "<tr><td>" + scorer.place + "</td>" +
                 "<td>" + scorer.name + " " + scorer.surname + "</td>" +
                 "<td>" + scorer.goalsScored + "</td>" +
-                "<td>" + scorer.assistsMade + "</td></tr>"
+                "<td>" + scorer.assistsMade + "</td>" +
+                "<td>" + "0" + "</td></tr>"
             );
         });
     });
