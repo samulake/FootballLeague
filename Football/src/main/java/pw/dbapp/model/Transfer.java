@@ -23,8 +23,8 @@ public class Transfer {
 	
 	private int money;
 
-	public Transfer(){
-
+	public Transfer() {
+		
 	}
 
 	public void finalize() throws Throwable {

@@ -13,5 +13,5 @@ public interface AdminLogic {
 
 	Match addMatchDetails(Long matchId, Match match);
 	
-	void makeTransfer(Transfer transfer);
+	Transfer makeTransfer(Transfer transfer);
 }

@@ -40,8 +40,8 @@ public class AdminController implements AdminLogic {
 	
 	@Override
 	@PostMapping("/transfers")
-	public void makeTransfer(@RequestBody Transfer transfer) {
-		personService.tranferPerson(transfer);
+	public Transfer makeTransfer(@RequestBody Transfer transfer) {
+		return personService.tranferPerson(transfer);
 	}
 
 }
