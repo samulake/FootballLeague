@@ -7,6 +7,6 @@ import org.hibernate.context.TenantIdentifierMismatchException;
 import pw.dbapp.model.Team;
 import pw.dbapp.model.TeamResults;
 
-public interface TeamLogic {	
+public interface TeamServiceLogic {	
 	public List<TeamResults> getLeagueTable(Long leagueId);
 }

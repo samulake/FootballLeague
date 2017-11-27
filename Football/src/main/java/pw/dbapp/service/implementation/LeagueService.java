@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 import pw.dbapp.model.League;
 import pw.dbapp.model.Team;
 import pw.dbapp.repository.LeagueRepository;
-import pw.dbapp.service.logic.LeagueLogic;
+import pw.dbapp.service.logic.LeagueServiceLogic;
 
 @Service
-public class LeagueService implements LeagueLogic {
+public class LeagueService implements LeagueServiceLogic {
 	@Autowired
 	private LeagueRepository leagueRepository;
 	

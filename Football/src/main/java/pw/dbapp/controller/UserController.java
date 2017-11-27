@@ -15,19 +15,19 @@ import pw.dbapp.model.Person;
 import pw.dbapp.model.Team;
 import pw.dbapp.model.TeamResults;
 import pw.dbapp.service.logic.GoalDetailsServiceLogic;
-import pw.dbapp.service.logic.LeagueLogic;
-import pw.dbapp.service.logic.TeamLogic;
-import pw.dbapp.service.logic.PersonLogic;
+import pw.dbapp.service.logic.LeagueServiceLogic;
+import pw.dbapp.service.logic.TeamServiceLogic;
+import pw.dbapp.service.logic.PersonServiceLogic;
 
 @RestController
 @RequestMapping("/user")
 public class UserController implements UserLogic {
 	@Autowired
-	private LeagueLogic leagueService;
+	private LeagueServiceLogic leagueService;
 	@Autowired
-	private TeamLogic teamService;
+	private TeamServiceLogic teamService;
 	@Autowired
-	private PersonLogic personService;
+	private PersonServiceLogic personService;
 	@Autowired
 	private GoalDetailsServiceLogic goalDetailsService;
 	

@@ -17,7 +17,7 @@ import pw.dbapp.model.Person;
 import pw.dbapp.repository.GoalDetailsRepository;
 import pw.dbapp.repository.PersonRepository;
 import pw.dbapp.service.logic.GoalDetailsServiceLogic;
-import pw.dbapp.service.logic.PersonLogic;
+import pw.dbapp.service.logic.PersonServiceLogic;
 
 @Service
 public class GoalDetailsService implements GoalDetailsServiceLogic {

@@ -16,7 +16,7 @@ import pw.dbapp.model.Match;
 import pw.dbapp.model.Person;
 import pw.dbapp.model.Transfer;
 import pw.dbapp.service.logic.MatchServiceLogic;
-import pw.dbapp.service.logic.PersonLogic;
+import pw.dbapp.service.logic.PersonServiceLogic;
 
 @RestController
 @RequestMapping("/admin")
@@ -24,7 +24,7 @@ public class AdminController implements AdminLogic {
 	@Autowired
 	MatchServiceLogic matchService;
 	@Autowired
-	private PersonLogic personService;
+	private PersonServiceLogic personService;
 	@Override
 	public Person updatePerson(Person person) {
 		// TODO Auto-generated method stub

@@ -9,10 +9,10 @@ import pw.dbapp.model.Team;
 import pw.dbapp.model.TeamResults;
 import pw.dbapp.repository.TeamRepository;
 import pw.dbapp.repository.TeamResultsRepository;
-import pw.dbapp.service.logic.TeamLogic;
+import pw.dbapp.service.logic.TeamServiceLogic;
 
 @Service
-public class TeamService implements TeamLogic {
+public class TeamService implements TeamServiceLogic {
 	@Autowired
 	private TeamRepository teamDAO;
 	@Autowired

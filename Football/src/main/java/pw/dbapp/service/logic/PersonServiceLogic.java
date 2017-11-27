@@ -5,7 +5,7 @@ import java.util.List;
 import pw.dbapp.model.Person;
 import pw.dbapp.model.Transfer;
 
-public interface PersonLogic {
+public interface PersonServiceLogic {
 	
 	List<Person> getPersons();
 

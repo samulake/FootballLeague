@@ -11,11 +11,11 @@ import pw.dbapp.model.Person;
 import pw.dbapp.model.Transfer;
 import pw.dbapp.repository.PersonRepository;
 import pw.dbapp.repository.TransferRepository;
-import pw.dbapp.service.logic.PersonLogic;
+import pw.dbapp.service.logic.PersonServiceLogic;
 
 @Service
 @Transactional
-public class PersonService implements PersonLogic {
+public class PersonService implements PersonServiceLogic {
 
 	@Autowired
 	private PersonRepository personRepository;
