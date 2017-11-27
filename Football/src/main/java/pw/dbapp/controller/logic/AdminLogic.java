@@ -5,6 +5,7 @@ import java.util.List;
 import pw.dbapp.model.GoalDetails;
 import pw.dbapp.model.Match;
 import pw.dbapp.model.Person;
+import pw.dbapp.model.Transfer;
 
 public interface AdminLogic {
 	
@@ -12,5 +13,5 @@ public interface AdminLogic {
 
 	Match addMatchDetails(Long matchId, Match match);
 	
-	void makeTransfer(Long personId, Long teamId);
+	void makeTransfer(Transfer transfer);
 }

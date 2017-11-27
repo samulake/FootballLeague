@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import pw.dbapp.model.Person;
+import pw.dbapp.model.Transfer;
 import pw.dbapp.repository.PersonRepository;
 import pw.dbapp.service.logic.PersonLogic;
 
@@ -22,8 +23,8 @@ public class PersonService implements PersonLogic {
 	}
 
 	@Override
-	public void tranferPerson(Long personId, Long teamId) {
-		personRepository.changeTeamOfPerson(personId, teamId);
+	public Transfer tranferPerson(Transfer transfer) {
+		return null;
 	}
 
 	
