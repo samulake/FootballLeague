@@ -13,10 +13,11 @@ import pw.dbapp.service.logic.MatchServiceLogic;
 public class MatchService implements MatchServiceLogic {
 	@Autowired
 	private MatchRepository matchDAO;
-	
+
 	@Override
 	public Match addMatch(Match match) {
-		Match updatedMatch = matchDAO.findByHomeTeamIdAndVisitorTeamId(match.getHomeTeam().getId(), match.getVisitorTeam().getId());
+		Match updatedMatch = matchDAO.findByHomeTeamIdAndVisitorTeamId(match.getHomeTeam().getId(),
+				match.getVisitorTeam().getId());
 		updatedMatch.setResult(match.getResult());
 		return matchDAO.save(updatedMatch);
 	}
