@@ -1,16 +1,34 @@
 var serverPrefix = 'http://localhost:8080';
 
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
+
+
 function loadLeagueTable(uri) {
 	
 	$.ajax({
 		type:		'GET',
 		url:		uri,
 		success:	function(teams) {
-			alert("success");
+			//alert("success");
+			$('#leagueName').html(getUrlParameter('leaguename'));
+			var p = 1;
 			$.each(teams, function(i, team) {
 	             $("#leagueTable").append(
-	                 "<tr><td>" + team.id + "</td>" +
-	                 "<td>" + team.name + "</td>" +
+	                 "<tr><td>" + p++ + ".</td>" +
+	                 "<td>" + team.team.name + "</td>" +
 	                 "<td>" + team.matchesPlayed + "</td>" +
 	                 "<td>" + team.wins + "</td>" +
 	                 "<td>" + team.draws + "</td>" +
@@ -32,7 +50,7 @@ function loadLeagueList(uri) {
 			$.each(leagues, function(i, league) {
 	             $("#leaguesTable").append(
 	                 "<tr><td>" + league.id + "</td>" +
-	                 "<td><a href=\"/leagues/"+ league.id +"\">" + league.name + "</a></td></tr>"
+	                 "<td><a href=\"/leagues/?teamid="+ league.id +"&leaguename=" + league.name +"\">" + league.name + "</a></td></tr>"
 	             );
 	        });
 		}
