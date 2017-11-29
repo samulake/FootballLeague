@@ -14,10 +14,12 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
+import pw.dbapp.validations.IsValidMatch;
 
 @Entity
 @Table(name="matches")
 @Data
+@IsValidMatch
 public class Match {
 	@Id @GeneratedValue
 	private Long id;

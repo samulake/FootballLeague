@@ -2,8 +2,11 @@ package pw.dbapp.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -17,6 +20,7 @@ import pw.dbapp.model.Person;
 import pw.dbapp.model.Transfer;
 import pw.dbapp.service.logic.MatchServiceLogic;
 import pw.dbapp.service.logic.PersonServiceLogic;
+import pw.dbapp.validations.IsValidMatch;
 
 @RestController
 @RequestMapping("/admin")
@@ -33,8 +37,10 @@ public class AdminController implements AdminLogic {
 
 	@Override
 	@PutMapping(path="/matches/{matchId}", consumes=MediaType.APPLICATION_JSON_VALUE)
-	public Match addMatchDetails(@PathVariable Long matchId, @RequestBody Match match) {
-		System.out.println(match.getResult());
+	public Match addMatchDetails(@PathVariable Long matchId, @Valid @RequestBody Match match, BindingResult result) {
+		if(result.hasErrors()) {
+			return null;
+		}
 		return matchService.addMatch(match);
 	}
 	
