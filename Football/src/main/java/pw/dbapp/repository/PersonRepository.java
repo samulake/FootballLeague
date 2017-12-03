@@ -20,4 +20,6 @@ public interface PersonRepository extends JpaRepository<Person, Long> {
 	@Transactional
 	@Query("update Person p set p.team.id = ?2 where p.id = ?1")
 	void changeTeamOfPerson(Long personId, Long teamId);
+	
+	List<Person> findByTeamId(Long teamId);
 }
