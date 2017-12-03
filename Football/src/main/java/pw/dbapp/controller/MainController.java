@@ -47,7 +47,7 @@ public class MainController {
 		return "maketransfer";
 	}
 	
-	@GetMapping("/leagues/")
+	@GetMapping("/leagues/table")
 	public String showLeague() {
 		return "league";
 	}
