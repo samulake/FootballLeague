@@ -36,12 +36,6 @@ public class UserController implements UserLogic {
 	public List<League> getAllLeagues() {
 		return leagueService.getLeagues();
 	}
-
-	@Override
-	@GetMapping(path="/persons")
-	public List<Person> getAllPersons() {
-		return personService.getPersons();
-	}
 	
 	@Override
 	@GetMapping(path="/bestScorers")

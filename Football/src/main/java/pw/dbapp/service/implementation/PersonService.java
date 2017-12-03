@@ -1,7 +1,12 @@
 package pw.dbapp.service.implementation;
 
+import java.math.BigInteger;
+import java.util.Collections;
 import java.util.List;
 
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,7 +26,7 @@ public class PersonService implements PersonServiceLogic {
 	private PersonRepository personRepository;
 	@Autowired
 	private TransferRepository transferDAO;
-	
+
 	@Override
 	public List<Person> getPersons() {
 		List<Person> persons = personRepository.findAll();
@@ -29,16 +34,16 @@ public class PersonService implements PersonServiceLogic {
 	}
 
 	@Override
-	@PostMapping
 	public Transfer tranferPerson(Transfer transfer) {
 		Person person = personRepository.findOne(transfer.getPerson().getId());
-		transfer.setFromTeam(person.getTeam());
 		Transfer newTransfer = transferDAO.save(transfer);
 		person.setTeam(transfer.getToTeam());
 		personRepository.save(person);
 		return newTransfer;
 	}
 
-	
-
+	@Override
+	public List<Person> getPlayers(Long teamId) {
+		return personRepository.findByTeamId(teamId);
+	}
 }

@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedNativeQuery;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 import org.junit.Ignore;
@@ -19,6 +21,12 @@ import lombok.Setter;
 @Entity
 @Table(name="people")
 @Data
+@NamedQuery(
+	name="person.allPlayers",
+	query=
+		"FROM Person " +
+		"WHERE job.id = :footballerJobId OR job.parentJob.id = :footballerJobId "
+)
 public class Person {
 	@Id @GeneratedValue @Expose
 	private Long id;

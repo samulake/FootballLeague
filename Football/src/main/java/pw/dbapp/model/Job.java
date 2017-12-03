@@ -3,6 +3,7 @@ package pw.dbapp.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -20,6 +21,7 @@ public class Job {
 	private Long id;
 	private String name;
 	@OneToOne
+	@JoinColumn(name="parent_job_id")
 	public Job parentJob;
 
 	public Job(){
