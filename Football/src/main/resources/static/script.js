@@ -36,7 +36,7 @@ function loadLeagueTable(uri) {
 		url : uri,
 		success : function(teams) {
 			// alert("success");
-			$('#leagueName').html(getUrlParameter('leaguename'));
+			$('#leagueName').html(getUrlParameter('leagueName'));
 			var p = 1;
 			$.each(teams, function(i, team) {
 				$("#leagueTable").append(
@@ -61,8 +61,8 @@ function loadLeagueList(uri) {
 			$.each(leagues, function(i, league) {
 				$("#leaguesTable").append(
 						"<tr><td>" + league.id + "</td>"
-								+ "<td><a href=\"/leagues/?teamid=" + league.id
-								+ "&leaguename=" + league.name + "\">"
+								+ "<td><a href=\"/leagues/table?leagueId=" + league.id
+								+ "&leagueName=" + league.name + "\">"
 								+ league.name + "</a></td></tr>");
 			});
 		}
