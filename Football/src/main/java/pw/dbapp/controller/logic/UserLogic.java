@@ -8,6 +8,7 @@ import pw.dbapp.model.Team;
 import pw.dbapp.model.TeamResults;
 
 public interface UserLogic {
+	Team getTeamData(Long teamId);
 		
 	List<League> getAllLeagues();
 	

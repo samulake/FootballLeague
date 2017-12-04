@@ -51,4 +51,9 @@ public class MainController {
 	public String showLeague() {
 		return "league";
 	}
+	
+	@GetMapping("/teams/details")
+	public String showTeamDetails() {
+		return "teamDetails";
+	}
 }

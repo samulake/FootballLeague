@@ -28,5 +28,10 @@ public class TeamService implements TeamServiceLogic {
 	public List<Team> getTeams() {
 		return teamDAO.findAll();
 	}
+
+	@Override
+	public Team getTeam(Long teamId) {
+		return teamDAO.findOne(teamId);
+	}
 	
 }

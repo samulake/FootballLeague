@@ -2,6 +2,8 @@ package pw.dbapp.controller;
 
 import java.util.List;
 
+import javax.ws.rs.Path;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -65,4 +67,12 @@ public class UserController implements UserLogic {
 	public List<TeamResults> getLeagueTable(@PathVariable Long leagueId) {
 		return teamService.getLeagueTable(leagueId);
 	}
+
+	@Override
+	@GetMapping(path="/teams/{teamId}")
+	public Team getTeamData(@PathVariable Long teamId) {
+		return teamService.getTeam(teamId);
+	}
+	
+	
 }

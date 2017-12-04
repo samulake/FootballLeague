@@ -13,4 +13,6 @@ public interface TeamServiceLogic {
 	public List<TeamResults> getLeagueTable(Long leagueId);
 	
 	List<Team> getTeams();
+	
+	Team getTeam(Long teamId);
 }
