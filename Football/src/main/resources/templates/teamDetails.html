@@ -7,8 +7,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>Insert title here</title>
-<script type="text/javascript" th:src="@{/script.js}">
-	var team = '/user/teams/' + getUrlParameter('teamId');
+<script type="text/javascript" th:src="@{/team.js}">
 </script>
 </head>
 <body>
@@ -30,17 +29,16 @@
 </nav>
 
 
-	<h3 id="leagueName"></h3>
-	<table id="leagueTable" class="table table-striped" >
+	<h3 id="teamName"></h3>
+	<table id="memberTable" class="table table-striped" >
 		<thead class="thead-light">
 		<tr>
 			<th>#</th>
 			<th>Imię i nazwisko</th>
 			<th>Narodowość</th>
+			<th>Rola</th>
 		</tr>
 		</thead>
-		<tbody>
-		</tbody>
 	</table>
 </body>
 </html>

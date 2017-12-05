@@ -2,10 +2,13 @@ package pw.dbapp.model;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -32,5 +35,16 @@ public class Team {
 	@ManyToOne
 	@JoinColumn(name="league_id")
 	private League league;
+	@OneToMany
+	@JoinTable(
+		name="squads",
+		joinColumns=@JoinColumn(
+			name="team_id",
+			foreignKey=@ForeignKey(name="FK_squads_teams")),
+		inverseJoinColumns=@JoinColumn(
+			name="person_id",
+			foreignKey=@ForeignKey(name="FK_squads_people"))
+	)
+	private List<Person> squad;
 
 }
