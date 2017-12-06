@@ -43,12 +43,7 @@ public class Match {
 	
 	private Date dateTime;
 	
-	@OneToMany
-	@JoinTable(
-		name="goals_details",
-		joinColumns=@JoinColumn(name="match_id"),
-		inverseJoinColumns=@JoinColumn(name="goal_id")
-	)
+	@OneToMany(mappedBy="match")
 	private List<GoalDetails> goals;
 	
 	private String result;
