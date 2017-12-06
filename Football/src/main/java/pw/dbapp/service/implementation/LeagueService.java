@@ -14,6 +14,8 @@ import pw.dbapp.service.logic.LeagueServiceLogic;
 public class LeagueService implements LeagueServiceLogic {
 	@Autowired
 	private LeagueRepository leagueRepository;
+	/*@Autowired
+	private TeamRe*/
 	
 	@Override
 	public List<League> getLeagues() {

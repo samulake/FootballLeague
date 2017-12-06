@@ -6,7 +6,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<title>Insert title here</title>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+<title>Drużyna</title>
 <script type="text/javascript" th:src="@{/team.js}">
 </script>
 </head>
@@ -21,14 +22,13 @@
       <li class="active"><a href="/leagues">Ligi</a></li>
       <li><a href="/bestScorers">Najlepsi strzelcy</a></li>
       <li><a href="/bestAssistants">Najlepsi asystenci</a></li>
-      <li><a href="/bestGoalkeepers">Najlepsi bramkarze</a></li>
       <li ><a href="/addMatch">Dodaj mecz</a></li>
       <li><a href="/makeTransfer">Zrób transfer</a></li>
     </ul>
   </div>
 </nav>
 
-
+<div class="container mycontainer">
 	<h3 id="teamName"></h3>
 	<table id="memberTable" class="table table-striped" >
 		<thead class="thead-light">
@@ -45,10 +45,11 @@
 		<tr>
 			<th>Data</th>
 			<th>Gospodarz</th>
-			<th>Gość</th>
 			<th>Wynik</th>
+			<th>Gość</th>
 		</tr>
 		</thead>
 	</table>
+	</div>
 </body>
 </html>

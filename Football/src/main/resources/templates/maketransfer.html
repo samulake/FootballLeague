@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+	  <link rel="stylesheet" type="text/css" href="/style.css" />
+	  <title>Zrób transfer</title>
 </head>
 <body>
 
@@ -18,7 +20,6 @@
 				<li><a href="/leagues">Ligi</a></li>
 				<li><a href="/bestScorers">Najlepsi strzelcy</a></li>
 				<li><a href="/bestAssistants">Najlepsi asystenci</a></li>
-				<li><a href="/bestGoalkeepers">Najlepsi bramkarze</a></li>
 				<li><a href="/addMatch">Dodaj mecz</a></li>
 				<li class="active"><a href="/makeTransfer">Zrób transfer</a></li>
 			</ul>
@@ -26,7 +27,7 @@
 	</nav>
 
 	<div class="container-fluid">
-		<div class="jumbotron">
+		<div class="jumbotron mycontainer">
 			<h3>Zrób transfer</h3>
 			<form method="post" enctype="application/json" action="/transfers">
 				<div class="row">

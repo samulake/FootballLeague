@@ -34,6 +34,14 @@ public class MatchService implements MatchServiceLogic {
 			System.out.println(gd);
 			goalDetailsDAO.save(gd);
 		}
+		
+		String [] result = match.getResult().split(":");
+		int homeTeamGoals = Integer.parseInt(result[0]);
+		int visitorTeamGoals = Integer.parseInt(result[1]);
+		if(homeTeamGoals > visitorTeamGoals) {
+			
+		}
+		
 		return matchDAO.save(updatedMatch);
 	}
 

@@ -271,10 +271,14 @@ function addMatch(uri) {
 		
 		l = $(this).closest("div").next().find(".assistant").val();
 		console.log(l);
-		var wid = document.getElementById("players").options.namedItem(l);
-		console.log(wid);
-		var aid = $(wid).data("id");	
-		console.log(aid);
+		if ( l ) {
+			var wid = document.getElementById("players").options.namedItem(l);
+			aid = {
+				"id" : $(wid).data("id")
+			}
+		} else {
+			var aid = null;
+		}
 		
 		
 		
@@ -285,9 +289,7 @@ function addMatch(uri) {
 				"scorer" : {
 					"id" : pid
 				},
-				"assistant" : {
-					"id" : aid
-				},
+				"assistant" : aid,
 				"goalkeeper" : null,
 				"forTeam" : {
 					"id" : ftid
@@ -305,8 +307,15 @@ function addMatch(uri) {
 	$.ajax({
 		  type: "PUT",
 		  url: serverPrefix + uri,
+	      dataType: "json",
 		  contentType: "application/json; charset=utf-8",
-		  data: JSON.stringify(data)
+		  data: JSON.stringify(data),
+		  success : function(result) {
+			  alert("Match successfully added!");
+		  },
+		  error : function(data) {
+			  alert("Adding match has failed!");
+		  }
 		});
 }
 

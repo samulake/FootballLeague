@@ -6,7 +6,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<title>Insert title here</title>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+<title>Dodaj mecz</title>
 <script type="text/javascript" th:src="@{/script.js}"></script>
 
 <script>
@@ -47,14 +48,13 @@ function loadMatch() {
       <li><a href="/leagues">Ligi</a></li>
       <li><a href="/bestScorers">Najlepsi strzelcy</a></li>
       <li><a href="/bestAssistants">Najlepsi asystenci</a></li>
-      <li><a href="/bestGoalkeepers">Najlepsi bramkarze</a></li>
       <li class="active"><a href="/addMatch">Dodaj mecz</a></li>
       <li><a href="/makeTransfer">Zrób transfer</a></li>
     </ul>
   </div>
 </nav>
-<div class="container-fluid">
-	<div class="jumbotron">
+<div class="container-fluid ">
+	<div class="jumbotron mycontainer">
 	<h3>Dodaj mecz</h3>
 	
 	<form method="post">
@@ -110,7 +110,7 @@ function loadMatch() {
     	<div class="row">
     		<div class="col-sm-4">
     			<br />
-    			<button type="button" class="btn" onclick="addGoal('/admin/persons/team/', htud, vtud)">Dodaj bramkę</button>
+    			<button type="button" class="btn mybtn" onclick="addGoal('/admin/persons/team/', htud, vtud)">Dodaj bramkę</button>
     		</div>
     	</div>    	
     	<div class="row">

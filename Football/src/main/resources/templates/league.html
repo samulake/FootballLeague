@@ -6,9 +6,9 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+  <link rel="stylesheet" type="text/css" href="/style.css" />
 <script type="text/javascript" th:src="@{/script.js}"></script>
-
+<title>Liga</title>
 <script>
 	var league = '/user/leagues/' + getUrlParameter('leagueId');
 </script>
@@ -25,16 +25,15 @@
       <li class="active"><a href="/leagues">Ligi</a></li>
       <li><a href="/bestScorers">Najlepsi strzelcy</a></li>
       <li><a href="/bestAssistants">Najlepsi asystenci</a></li>
-      <li><a href="/bestGoalkeepers">Najlepsi bramkarze</a></li>
       <li ><a href="/addMatch">Dodaj mecz</a></li>
       <li><a href="/makeTransfer">Zrób transfer</a></li>
     </ul>
   </div>
 </nav>
 
-
+<div class="container mycontainer">
 	<h3 id="leagueName"></h3>
-	<table id="leagueTable" class="table table-striped">
+	<table id="leagueTable" class="table">
 		<thead class="thead-light">
 		<tr>
 			<th>#</th>
@@ -49,6 +48,6 @@
 		<tbody>
 		</tbody>
 	</table>
-
+</div>
 </body>
 </html>
