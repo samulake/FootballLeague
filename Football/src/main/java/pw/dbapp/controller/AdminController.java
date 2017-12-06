@@ -29,6 +29,7 @@ import pw.dbapp.model.Match;
 import pw.dbapp.model.Person;
 import pw.dbapp.model.Team;
 import pw.dbapp.model.Transfer;
+import pw.dbapp.service.implementation.DatabaseErrorLoggingService;
 import pw.dbapp.service.logic.MatchServiceLogic;
 import pw.dbapp.service.logic.PersonServiceLogic;
 import pw.dbapp.service.logic.TeamServiceLogic;
@@ -43,6 +44,8 @@ public class AdminController implements AdminLogic {
 	private PersonServiceLogic personService;
 	@Autowired
 	private TeamServiceLogic teamService;
+	@Autowired
+	private DatabaseErrorLoggingService errorLogging;
 	
 	@Override
 	public Person updatePerson(Person person) {
@@ -54,6 +57,7 @@ public class AdminController implements AdminLogic {
 	@PutMapping(path="/addMatch", consumes=MediaType.APPLICATION_JSON_VALUE)
 	public Match addMatchDetails(@Valid @RequestBody Match match, BindingResult result) {
 		if(result.hasErrors()) {
+			errorLogging.logError("Dane dotyczące bramek niezgodne z wprowadzonym wynikiem");
 			return null;
 		}
 		return matchService.addMatch(match);
