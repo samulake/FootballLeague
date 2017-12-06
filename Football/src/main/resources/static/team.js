@@ -13,10 +13,9 @@ $(document).ready(function() {
 	(function() {
 		$.ajax({
 			type : 'GET',
-			url : "/user/teams/" + $.urlParam("teamId"),
-			success : function(data) {
-				team = data;
-				$.each(team.squad, function(i, member) {
+			url : "/user/teams/" + $.urlParam("teamId") + "/squad",
+			success : function(squad) {
+				$.each(squad, function(i, member) {
 					var memberRow = document.createElement("tr");
 					var hash, fullName, countryAbbreviation, role;
 					
@@ -38,6 +37,36 @@ $(document).ready(function() {
 					
 					$("#memberTable tr:last").after(memberRow);
 				});
+			}
+		});
+		
+		$.ajax({
+			type : 'GET',
+			url : "/user/teams/" + $.urlParam("teamId") + "/matches",
+			success : function(matches) {
+				var i = 0;
+				for(i = 0; i < 10; i++) {
+					var memberRow = document.createElement("tr");
+					var date, homeTeamName, result, visitorTeamName;
+					
+					date = document.createElement("td");
+					homeTeamName = document.createElement("td");
+					result = document.createElement("td");
+					visitorTeamName = document.createElement("td");
+					
+					date.textContent = new Date(matches[i].dateTime);
+					homeTeamName.textContent = matches[i].homeTeam.name;
+					result.textContent = matches[i].result == undefined ? "-- : --" : matches[i].result;
+					visitorTeamName.textContent = matches[i].visitorTeam.name;
+					
+					memberRow.appendChild(date);
+					memberRow.appendChild(homeTeamName);
+					memberRow.appendChild(result);
+					memberRow.appendChild(visitorTeamName);
+					
+					$("#matchesTable tr:last").after(memberRow);
+				}
+				
 			}
 		});
 	})();

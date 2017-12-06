@@ -24,7 +24,7 @@ import lombok.ToString;
 @Table(name="teams")
 @Data
 @ToString(exclude={"stadium", "league"})
-@JsonIgnoreProperties(value={"stadium", "league"})
+@JsonIgnoreProperties(value={"stadium", "league", "squad"})
 public class Team {
 	@Id @GeneratedValue
 	private Long id;

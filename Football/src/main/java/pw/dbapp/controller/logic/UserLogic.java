@@ -3,12 +3,12 @@ package pw.dbapp.controller.logic;
 import java.util.List;
 
 import pw.dbapp.model.League;
+import pw.dbapp.model.Match;
 import pw.dbapp.model.Person;
 import pw.dbapp.model.Team;
 import pw.dbapp.model.TeamResults;
 
 public interface UserLogic {
-	Team getTeamData(Long teamId);
 		
 	List<League> getAllLeagues();
 	
@@ -21,4 +21,8 @@ public interface UserLogic {
 	String getBestScorers();
 
 	String getBestAssistants();
+
+	List<Match> getMatchesOfTeam(Long teamId);
+
+	List<Person> getTeamSquad(Long teamId);
 }
