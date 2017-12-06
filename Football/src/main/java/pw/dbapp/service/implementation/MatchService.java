@@ -24,6 +24,7 @@ public class MatchService implements MatchServiceLogic {
 		Match updatedMatch = matchDAO.findByHomeTeamIdAndVisitorTeamId(match.getHomeTeam().getId(),
 				match.getVisitorTeam().getId());
 		updatedMatch.setResult(match.getResult());
+		System.out.println(updatedMatch.getResult() + updatedMatch.getHomeTeam());
 		return matchDAO.save(updatedMatch);
 	}
 

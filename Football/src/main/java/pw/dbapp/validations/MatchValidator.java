@@ -18,7 +18,7 @@ public class MatchValidator implements ConstraintValidator<IsValidMatch, Match> 
 		String[] result = match.getResult().split(":");
 		int homeTeamGoals = Integer.parseInt(result[0]);
 		int visitorTeamGoals = Integer.parseInt(result[1]);
-		if(match.getGoals().size() > homeTeamGoals + visitorTeamGoals) {
+		if(match.getGoals().size() != homeTeamGoals + visitorTeamGoals) {
 			return false;
 		}
 		return true;

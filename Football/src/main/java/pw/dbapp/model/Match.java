@@ -14,11 +14,13 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
+import lombok.ToString;
 import pw.dbapp.validations.IsValidMatch;
 
 @Entity
 @Table(name="matches")
 @Data
+@ToString(exclude={"homeTeam", "league", "visitorTeam", "goals"})
 @IsValidMatch
 public class Match {
 	@Id @GeneratedValue
@@ -41,7 +43,12 @@ public class Match {
 	
 	private Date dateTime;
 	
-	@OneToMany(mappedBy="match")
+	@OneToMany
+	@JoinTable(
+		name="goals_details",
+		joinColumns=@JoinColumn(name="match_id"),
+		inverseJoinColumns=@JoinColumn(name="goal_id")
+	)
 	private List<GoalDetails> goals;
 	
 	private String result;

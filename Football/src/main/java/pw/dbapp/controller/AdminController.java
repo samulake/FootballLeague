@@ -47,6 +47,7 @@ public class AdminController implements AdminLogic {
 	@PutMapping(path="/matches/{matchId}", consumes=MediaType.APPLICATION_JSON_VALUE)
 	public Match addMatchDetails(@PathVariable Long matchId, @Valid @RequestBody Match match, BindingResult result) {
 		if(result.hasErrors()) {
+			System.out.println("testttttttttttttttt");
 			return null;
 		}
 		return matchService.addMatch(match);

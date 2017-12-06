@@ -17,10 +17,12 @@ import com.google.gson.annotations.Expose;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Table(name="people")
 @Data
+@ToString(exclude={"country", "job", "team"})
 @NamedQuery(
 	name="person.allPlayers",
 	query=

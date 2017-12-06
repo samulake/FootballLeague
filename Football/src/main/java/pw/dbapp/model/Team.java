@@ -23,7 +23,7 @@ import lombok.ToString;
 @Entity(name="teams")
 @Table(name="teams")
 @Data
-@ToString(exclude={"stadium", "league"})
+@ToString(exclude={"stadium", "league", "squad"})
 @JsonIgnoreProperties(value={"stadium", "league", "squad"})
 public class Team {
 	@Id @GeneratedValue
