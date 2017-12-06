@@ -51,10 +51,9 @@ public class AdminController implements AdminLogic {
 	}
 
 	@Override
-	@PutMapping(path="/matches/{matchId}", consumes=MediaType.APPLICATION_JSON_VALUE)
-	public Match addMatchDetails(@PathVariable Long matchId, @Valid @RequestBody Match match, BindingResult result) {
+	@PutMapping(path="/addMatch", consumes=MediaType.APPLICATION_JSON_VALUE)
+	public Match addMatchDetails(@Valid @RequestBody Match match, BindingResult result) {
 		if(result.hasErrors()) {
-			System.out.println("testttttttttttttttt");
 			return null;
 		}
 		return matchService.addMatch(match);
@@ -99,10 +98,4 @@ public class AdminController implements AdminLogic {
 		return personService.getPersonsByTeamId(id);
 	}
 	
-	@Override
-	@PostMapping("/addMatch")
-	public void addMatch(@RequestBody Match match) {
-		matchService.addMatch(match);
-	}
-
 }

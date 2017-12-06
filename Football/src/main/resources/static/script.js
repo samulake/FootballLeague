@@ -303,7 +303,7 @@ function addMatch(uri) {
 	
 
 	$.ajax({
-		  type: "POST",
+		  type: "PUT",
 		  url: serverPrefix + uri,
 		  contentType: "application/json; charset=utf-8",
 		  data: JSON.stringify(data)

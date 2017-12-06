@@ -18,7 +18,7 @@ public interface AdminLogic {
 	
 	Transfer makeTransfer(Transfer transfer);
 
-	Match addMatchDetails(Long matchId, Match match, BindingResult result);
+	Match addMatchDetails(Match match, BindingResult result);
 	
 	String getMatchesList(Long leagueId);
 	
@@ -30,5 +30,4 @@ public interface AdminLogic {
 
 	List<Team> getTeams();
 	
-	void addMatch(Match match);
 }
