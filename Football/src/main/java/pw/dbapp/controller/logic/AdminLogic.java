@@ -16,4 +16,12 @@ public interface AdminLogic {
 	Transfer makeTransfer(Transfer transfer);
 
 	Match addMatchDetails(Long matchId, Match match, BindingResult result);
+	
+	String getMatchesList(Long leagueId);
+	
+	Match getMatchByHomeTeamIdAndVisitorTeamId(Long homeTeamId, Long visitorTeamId);
+	
+	List<Person> getPersonsByTeamId(Long id);
+	
+	void addMatch(Match match);
 }

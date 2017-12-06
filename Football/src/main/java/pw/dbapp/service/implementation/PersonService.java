@@ -39,6 +39,11 @@ public class PersonService implements PersonServiceLogic {
 		return newTransfer;
 	}
 
+	@Override
+	public List<Person> getPersonsByTeamId(Long id) {
+		return personRepository.getPersonByTeamId(id);
+	}
+
 	
 
 }

@@ -9,5 +9,7 @@ public interface PersonServiceLogic {
 	
 	List<Person> getPersons();
 
+	List<Person> getPersonsByTeamId(Long id);
+	
 	Transfer tranferPerson(Transfer transfer);
 }

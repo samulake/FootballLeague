@@ -13,6 +13,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.google.gson.annotations.Expose;
 
 import lombok.Data;
 import lombok.ToString;
@@ -23,8 +24,9 @@ import lombok.ToString;
 @ToString(exclude={"stadium", "league"})
 @JsonIgnoreProperties(value={"stadium", "league"})
 public class Team {
-	@Id @GeneratedValue
+	@Id @GeneratedValue @Expose
 	private Long id;
+	@Expose
 	private String name;
 	@OneToOne
 	@JoinColumn(name="stadium_id")
