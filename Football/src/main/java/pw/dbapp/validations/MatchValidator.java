@@ -21,7 +21,6 @@ public class MatchValidator implements ConstraintValidator<IsValidMatch, Match> 
 		if(match.getGoals().size() > homeTeamGoals + visitorTeamGoals) {
 			return false;
 		}
-		System.out.println("testyttttttttttttttt");
 		return true;
 	}
 

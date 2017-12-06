@@ -2,6 +2,8 @@ package pw.dbapp.controller;
 
 import java.util.List;
 
+import javax.ws.rs.Path;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,11 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import pw.dbapp.controller.logic.UserLogic;
 import pw.dbapp.model.League;
+import pw.dbapp.model.Match;
 import pw.dbapp.model.Person;
 import pw.dbapp.model.Team;
 import pw.dbapp.model.TeamResults;
 import pw.dbapp.service.logic.GoalDetailsServiceLogic;
 import pw.dbapp.service.logic.LeagueServiceLogic;
+import pw.dbapp.service.logic.MatchServiceLogic;
 import pw.dbapp.service.logic.TeamServiceLogic;
 import pw.dbapp.service.logic.PersonServiceLogic;
 
@@ -30,6 +34,8 @@ public class UserController implements UserLogic {
 	private PersonServiceLogic personService;
 	@Autowired
 	private GoalDetailsServiceLogic goalDetailsService;
+	@Autowired
+	private MatchServiceLogic matchService;
 	
 	@Override
 	@GetMapping(path="/leagues", produces=MediaType.APPLICATION_JSON_VALUE)
@@ -64,5 +70,18 @@ public class UserController implements UserLogic {
 	@GetMapping(path="/leagues/{leagueId}", produces=MediaType.APPLICATION_JSON_VALUE)
 	public List<TeamResults> getLeagueTable(@PathVariable Long leagueId) {
 		return teamService.getLeagueTable(leagueId);
+	}
+
+	@Override
+	@GetMapping(path="/teams/{teamId}/squad")
+	public List<Person> getTeamSquad(@PathVariable Long teamId) {
+		return personService.getPlayers(teamId);
+	}
+
+	@Override
+	@GetMapping("/teams/{teamId}/matches")
+	public List<Match> getMatchesOfTeam(@PathVariable Long teamId) {
+		// TODO Auto-generated method stub
+		return matchService.getMatchesOfTeam(teamId);
 	}
 }
