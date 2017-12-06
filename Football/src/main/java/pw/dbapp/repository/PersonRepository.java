@@ -16,6 +16,9 @@ public interface PersonRepository extends JpaRepository<Person, Long> {
 	@Query("select p from Person p where p.id = ?1")
 	Person getPersonById( Long id);
 	
+	@Query("select p from Person p where p.team.id = ?1")
+	List<Person> getPersonByTeamId(Long id);
+	
 	@Modifying
 	@Transactional
 	@Query("update Person p set p.team.id = ?2 where p.id = ?1")

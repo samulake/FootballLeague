@@ -8,4 +8,6 @@ public interface MatchServiceLogic {
 	public Match addMatch(Match match);
 	
 	public List<Match> getMatchesOfTeam(Long teamId);
+	public List<Match> getMatchesList(Long leagueId);
+	public Match getMatchByHomeTeamIdAndVisitorTeamId(Long homeTeamId, Long visitorTeamId);
 }

@@ -9,8 +9,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import pw.dbapp.model.GoalDetails;
 import pw.dbapp.model.Match;
 import pw.dbapp.model.Team;
+import pw.dbapp.repository.GoalDetailsRepository;
 import pw.dbapp.repository.MatchRepository;
 import pw.dbapp.service.logic.MatchServiceLogic;
 
@@ -19,12 +21,19 @@ public class MatchService implements MatchServiceLogic {
 	@Autowired
 	private MatchRepository matchDAO;
 
+	@Autowired
+	private GoalDetailsRepository goalDetailsDAO;
+
 	@Override
 	public Match addMatch(Match match) {
 		Match updatedMatch = matchDAO.findByHomeTeamIdAndVisitorTeamId(match.getHomeTeam().getId(),
 				match.getVisitorTeam().getId());
 		updatedMatch.setResult(match.getResult());
-		System.out.println(updatedMatch.getResult() + updatedMatch.getHomeTeam());
+
+		for (GoalDetails gd : match.getGoals()) {
+			System.out.println(gd);
+			goalDetailsDAO.save(gd);
+		}
 		return matchDAO.save(updatedMatch);
 	}
 
@@ -43,5 +52,16 @@ public class MatchService implements MatchServiceLogic {
 		matches.addAll(matchDAO.findAll(matchExample));
 		matches.sort((x, y) -> x.getDateTime().compareTo(y.getDateTime()));
 		return matches;
+	}
+
+	@Override
+	public List<Match> getMatchesList(Long leagueId) {
+		return matchDAO.findByLeagueId(leagueId);
+	}
+
+	@Override
+	public Match getMatchByHomeTeamIdAndVisitorTeamId(Long homeTeamId,
+			Long visitorTeamId) {
+		return matchDAO.findByHomeTeamIdAndVisitorTeamId(homeTeamId, visitorTeamId);
 	}
 }

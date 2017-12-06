@@ -6,6 +6,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.google.gson.annotations.Expose;
+
 import lombok.Data;
 
 @Entity
@@ -14,6 +16,7 @@ import lombok.Data;
 public class Stadium {
 	@Id @GeneratedValue
 	private Long id;
+	@Expose
 	private String name;
 
 	public Stadium(){

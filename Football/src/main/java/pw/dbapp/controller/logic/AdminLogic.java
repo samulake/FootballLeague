@@ -20,7 +20,15 @@ public interface AdminLogic {
 
 	Match addMatchDetails(Long matchId, Match match, BindingResult result);
 	
+	String getMatchesList(Long leagueId);
+	
+	Match getMatchByHomeTeamIdAndVisitorTeamId(Long homeTeamId, Long visitorTeamId);
+	
+	List<Person> getPersonsByTeamId(Long id);
+	
 	List<Person> getAllPlayers(Long teamId);
 
 	List<Team> getTeams();
+	
+	void addMatch(Match match);
 }

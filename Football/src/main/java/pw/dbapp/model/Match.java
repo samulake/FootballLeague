@@ -13,6 +13,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.google.gson.annotations.Expose;
+
 import lombok.Data;
 import lombok.ToString;
 import pw.dbapp.validations.IsValidMatch;
@@ -23,7 +25,7 @@ import pw.dbapp.validations.IsValidMatch;
 @ToString(exclude={"homeTeam", "league", "visitorTeam", "goals"})
 @IsValidMatch
 public class Match {
-	@Id @GeneratedValue
+	@Id @GeneratedValue @Expose
 	private Long id;
 	@OneToOne
 	@JoinColumn(name="league_id")
@@ -31,10 +33,12 @@ public class Match {
 
 	@ManyToOne
 	@JoinColumn(name="home_team_id")
+	@Expose
 	private Team homeTeam;
 	
 	@ManyToOne
 	@JoinColumn(name="visitor_team_id")
+	@Expose
 	private Team visitorTeam;
 	
 	@ManyToOne

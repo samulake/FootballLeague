@@ -43,6 +43,11 @@ public class PersonService implements PersonServiceLogic {
 	}
 
 	@Override
+	public List<Person> getPersonsByTeamId(Long id) {
+		return personRepository.getPersonByTeamId(id);
+	}
+
+	@Override
 	public List<Person> getPlayers(Long teamId) {
 		return personRepository.findByTeamId(teamId);
 	}
