@@ -56,8 +56,9 @@ public class AdminController implements AdminLogic {
 	@Override
 	@PutMapping(path="/addMatch", consumes=MediaType.APPLICATION_JSON_VALUE)
 	public Match addMatchDetails(@Valid @RequestBody Match match, BindingResult result) {
+		System.out.println(match.getHomeTeam().getId());
 		if(result.hasErrors()) {
-			errorLogging.logError("Dane dotyczące bramek niezgodne z wprowadzonym wynikiem");
+			errorLogging.logError("Dane dotyczące bramek niezgodne z wprowadzonym wynikiem!");
 			return null;
 		}
 		return matchService.addMatch(match);

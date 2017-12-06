@@ -34,7 +34,8 @@ function loadLeagueTable(uri) {
 				$("#leagueTable").append(
 						"<tr><td>" + p++ + ".</td>" + "<td><a href=\"/teams/details?teamId=" + team.team.id
 						+ "&teamName=" + team.team.name + "\">"
-						+ team.team.name + "</a></td>" + "<td>" + team.matchesPlayed
+						+ team.team.name + "</a></td>" + "<td>" + team.points
+						+ "</td>" + "<td>" + team.matchesPlayed
 								+ "</td>" + "<td>" + team.wins + "</td>"
 								+ "<td>" + team.draws + "</td>" + "<td>"
 								+ team.defeats + "</td>" + "<td>"
